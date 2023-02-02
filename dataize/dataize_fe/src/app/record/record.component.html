@@ -1,0 +1,14 @@
+<div class="firstLine">
+  <app-record-search *ngIf="fileName && fileData"></app-record-search>
+  <app-file-info item="record" [fileData]="fileData" (picsUpload)="onPicsUpload($event)"></app-file-info>
+</div>
+<div *ngIf="fileName && fileData">
+  <app-result-table item="record" [displayedColumns]="recordDisplayedColumns">
+  </app-result-table>
+  <app-record-list *ngIf="isComponent" [target]="resultTable" [fileData]="fileData" [pictures]="pictures">
+  </app-record-list>
+  <div #resultTable>
+    <app-record-form *ngIf="isComponent" [fileData]="fileData" [pictures]="pictures">
+    </app-record-form>
+  </div>
+</div>

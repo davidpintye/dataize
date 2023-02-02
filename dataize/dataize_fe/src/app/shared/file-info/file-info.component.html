@@ -1,0 +1,22 @@
+<div class="info-container">
+    <!-- <mat-form-field appearance="fill" floatLabel="always">
+        <mat-label>Price</mat-label>
+        <input type="text" 
+            matInput 
+            id="price-input" 
+            min="4.99" 
+            max="99999.99" 
+            step="5.0"
+            #price 
+            (change)="this.priceService['price'] = price.value"
+            >
+        <span matPrefix>$&nbsp;</span>
+    </mat-form-field> -->
+    <div class="fileName" *ngIf="fileData"><b>Filename: </b><span>{{fileData.fileName}}</span></div>
+    <button type="button" [disabled]="!fileData" mat-raised-button (click)="fileInput.click()">
+        <mat-icon>upload</mat-icon>
+    </button>
+    <input multiple hidden type="file" id="img" name="img" accept="image/*" #fileInput (change)="onUpload($event)">
+    <button type="button" mat-raised-button color="accent" (click)="onCreateFileDialog()">Create</button>
+    <button type="button" mat-raised-button (click)="onOpenFileDialog()">Files</button>
+</div>

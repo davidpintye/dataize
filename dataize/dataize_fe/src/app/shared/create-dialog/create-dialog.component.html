@@ -1,0 +1,14 @@
+<form style="display: flex; flex-direction: column;" [formGroup]="f">
+  <mat-dialog-content class="mat-typography">
+    <mat-form-field>
+      <ng-container>
+        <input type="text" matInput placeholder="File Name" formControlName="fileName">
+      </ng-container>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions style="justify-content: space-around;">
+    <button [disabled]="this.f.invalid" type="button" mat-raised-button color="accent"
+      [mat-dialog-close]="f.value">OK</button>
+    <button type="button" mat-raised-button (click)="onCancel()">Cancel</button>
+  </mat-dialog-actions>
+</form>

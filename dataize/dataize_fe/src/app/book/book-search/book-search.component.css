@@ -1,0 +1,13 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 28% 28% 40%;
+  column-gap: 0.3rem;
+  margin: 1rem;
+}

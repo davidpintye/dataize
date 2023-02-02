@@ -1,0 +1,14 @@
+<div class="firstLine">
+  <app-book-search *ngIf="fileName && fileData"></app-book-search>
+  <app-file-info item="book" [fileData]="fileData" (picsUpload)="onPicsUpload($event)"></app-file-info>
+</div>
+<div *ngIf="fileName && fileData">
+  <app-result-table item="book" [displayedColumns]="bookDisplayedColumns">
+  </app-result-table>
+  <app-book-list *ngIf="isComponent" [target]="resultTable" [fileData]="fileData" [pictures]="pictures">
+  </app-book-list>
+  <div #resultTable>
+    <app-book-form *ngIf="isComponent" [fileData]="fileData" [pictures]="pictures">
+    </app-book-form>
+  </div>
+</div>
